@@ -2,7 +2,7 @@
 Name:		ncsmtp
 Summary:	Null Client SMTP daemon with aliases support
 Version:	0.2
-Release: 	%mkrel 3
+Release: 	%mkrel 4
 URL:		http://voxel.jouy.inra.fr/darcs/ncsmtp/
 Source0:	http://voxel.jouy.inra.fr/darcs/ncsmtp//ncsmtp-%{version}.tar.bz2
 License:	GPL
