@@ -10,7 +10,7 @@ Group:		System/Servers
 Requires:	python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
-PreReq:          rpm-helper
+Requires(pre):  rpm-helper
 
 %description
 A null client is a machine that can only send mail. It receives no
