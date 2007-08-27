@@ -2,7 +2,7 @@
 Name:		ncsmtp
 Summary:	Null Client SMTP daemon with aliases support
 Version:	0.2
-Release: 	%mkrel 4
+Release: 	%mkrel 5
 URL:		http://voxel.jouy.inra.fr/darcs/ncsmtp/
 Source0:	http://voxel.jouy.inra.fr/darcs/ncsmtp//ncsmtp-%{version}.tar.bz2
 License:	GPL
@@ -10,7 +10,8 @@ Group:		System/Servers
 Requires:	python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
-Requires(pre):  rpm-helper
+Requires(preun):  rpm-helper
+Requires(post):  rpm-helper
 
 %description
 A null client is a machine that can only send mail. It receives no
