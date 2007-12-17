@@ -8,7 +8,6 @@ Source0:	http://voxel.jouy.inra.fr/darcs/ncsmtp//ncsmtp-%{version}.tar.bz2
 License:	GPL
 Group:		System/Servers
 Requires:	python
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 Requires(preun):  rpm-helper
 Requires(post):  rpm-helper
