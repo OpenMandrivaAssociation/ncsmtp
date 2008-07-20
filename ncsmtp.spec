@@ -1,17 +1,16 @@
-
-Name:		ncsmtp
 Summary:	Null Client SMTP daemon with aliases support
+Name:		ncsmtp
 Version:	0.2
-Release: 	%mkrel 5
-URL:		http://voxel.jouy.inra.fr/darcs/ncsmtp/
-Source0:	http://voxel.jouy.inra.fr/darcs/ncsmtp//ncsmtp-%{version}.tar.bz2
+Release: 	%mkrel 6
 License:	GPL
 Group:		System/Servers
+URL:		http://voxel.jouy.inra.fr/darcs/ncsmtp/
+Source0:	http://voxel.jouy.inra.fr/darcs/ncsmtp//ncsmtp-%{version}.tar.bz2
 Requires:	python
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 Requires(preun):  rpm-helper
 Requires(post):  rpm-helper
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 A null client is a machine that can only send mail. It receives no
@@ -35,27 +34,15 @@ You should install a small package providing sendmail command (like
 mini_sendmail or msmtp) to use this daemon.
 
 %prep
-%setup
 
+%setup -q
 
 %build
 
-
 %install
-DESTDIR=%buildroot sh install.sh
+rm -rf %{buildroot}
 
-%clean
-/bin/rm -Rf %buildroot
-
-
-%files
-%defattr(-, root, root, 0755)
-%doc COPYING README version
-%dir %{_sysconfdir}/ncsmtp
-%config(noreplace)  %{_sysconfdir}/ncsmtp/*
-%config(noreplace) %{_sysconfdir}/rc.d/init.d/ncsmtp
-%{_sbindir}/*
-
+DESTDIR=%{buildroot} sh install.sh
 
 %post
 # Install service:
@@ -66,5 +53,13 @@ DESTDIR=%buildroot sh install.sh
 # Remove service:
 %_preun_service ncsmtp
 
+%clean
+rm -rf %{buildroot}
 
-
+%files
+%defattr(-, root, root, 0755)
+%doc COPYING README version
+%{_initrddir}/ncsmtp
+%dir %{_sysconfdir}/ncsmtp
+%config(noreplace)  %{_sysconfdir}/ncsmtp/*
+%{_sbindir}/*
