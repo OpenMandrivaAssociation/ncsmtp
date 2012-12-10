@@ -63,3 +63,52 @@ rm -rf %{buildroot}
 %dir %{_sysconfdir}/ncsmtp
 %config(noreplace)  %{_sysconfdir}/ncsmtp/*
 %{_sbindir}/*
+
+
+%changelog
+* Sat Dec 11 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2-8mdv2011.0
++ Revision: 620481
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.2-7mdv2010.0
++ Revision: 430161
+- rebuild
+
+* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 0.2-6mdv2009.0
++ Revision: 239080
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Mon Aug 27 2007 Gaëtan Lehmann <glehmann@mandriva.org> 0.2-5mdv2008.0
++ Revision: 71884
+- the right PreReq fix (thanks to Thierry Vignaud)
+
+* Sun Aug 26 2007 Gaëtan Lehmann <glehmann@mandriva.org> 0.2-4mdv2008.0
++ Revision: 71509
+- fix PreReq
+- rebuild
+
+
+* Thu May 25 2006 Gaetan Lehmann <gaetan.lehmann@jouy.inra.fr> 0.2-3mdv2007.0
+- yearly rebuild
+
+* Thu May 19 2005 Gaetan Lehmann <gaetan.lehmann@jouy.inra.fr> 0.2-2mdk
+- drop provides smtpdaemon
+- drop mini_sendmail requirement
+
+* Wed May 18 2005 Gaetan Lehmann <gaetan.lehmann@jouy.inra.fr> 0.2-1mdk
+- New release 0.2
+- update url
+
+* Wed Mar 23 2005 Gaetan Lehmann <gaetan.lehmann@jouy.inra.fr> 0.1-2mdk
+- remove sendmail update-alternatives (done in mini_sendmail)
+- use mkrel
+
+* Thu Mar 17 2005 Gaetan Lehmann <gaetan.lehmann@jouy.inra.fr> 0.1-1mdk
+- initial contrib
+
