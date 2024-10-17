@@ -4,7 +4,7 @@ Version:	0.2
 Release: 	9
 License:	GPL
 Group:		System/Servers
-URL:		http://voxel.jouy.inra.fr/darcs/ncsmtp/
+URL:		https://voxel.jouy.inra.fr/darcs/ncsmtp/
 Source0:	http://voxel.jouy.inra.fr/darcs/ncsmtp//ncsmtp-%{version}.tar.bz2
 Requires:	python
 BuildArch:	noarch
